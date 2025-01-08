@@ -160,7 +160,7 @@ app.get("/type", async (req, res) => {
 });
 
 // get all products by type
-app.get("/product/:typeId", async (req, res) => {
+app.get("/product/type/:typeId", async (req, res) => {
   try {
     const { typeId } = req.params;
     const products = await Product.findAll({
