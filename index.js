@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const Sequelize = require("sequelize");
 const app = express();
+const cors = require("cors");
 
 // set environment variables
 const PORT = process.env.PORT || 5000;
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 5000;
 // parse incoming requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 // connect to the database
 const sequelize = new Sequelize("database", "username", "password", {
